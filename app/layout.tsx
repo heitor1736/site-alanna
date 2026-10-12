@@ -1,16 +1,44 @@
 import type { Metadata } from 'next';
 import './globals.css';
+import './refinements.css';
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://vitoria-marinho.heitor-trindad920188.chatgpt.site'),
-  title: 'Vitória Marinho | Direito & Humanidade',
-  description: 'Conheça Vitória Marinho, formanda em Direito pela Universidade de Brasília. Formação, trajetória e um olhar humano para o Direito.',
+  metadataBase: new URL('http://localhost:3000'),
+  title: 'Alanna Alves | Advocacia e Consultoria — Conceito',
+  description:
+    'Um escritório boutique imaginado em Brasília. Estratégia, patrimônio, negócios e pessoas em uma experiência editorial. Projeto conceitual fictício.',
   robots: { index: false, follow: false },
   icons: { icon: '/icon.svg' },
-  openGraph: { title: 'Vitória Marinho | Direito & Humanidade', description: 'O Direito começa com um olhar humano. Conheça a trajetória de Vitória Marinho, formanda em Direito pela UnB.', locale: 'pt_BR', type: 'website', images: [{ url: 'https://vitoria-marinho.heitor-trindad920188.chatgpt.site/og.png', width: 1536, height: 1024, alt: 'Vitória Marinho — Direito & Humanidade' }] },
-  twitter: { card: 'summary_large_image', title: 'Vitória Marinho | Direito & Humanidade', description: 'Formação na UnB. Raízes em Brasília. Um olhar humano para o Direito.', images: ['https://vitoria-marinho.heitor-trindad920188.chatgpt.site/og.png'] },
+  openGraph: {
+    title: 'Alanna Alves | Advocacia e Consultoria',
+    description:
+      'O que importa para você, nos move. Conceito fictício de escritório boutique em Brasília.',
+    locale: 'pt_BR',
+    type: 'website',
+    images: [
+      {
+        url: '/equipe-editorial.webp',
+        width: 1536,
+        height: 1024,
+        alt: 'Equipe ilustrativa de um escritório fictício',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'Alanna Alves | Advocacia e Consultoria',
+    description:
+      'Estratégia, proximidade e um novo olhar. Escritório fictício.',
+    images: ['/equipe-editorial.webp'],
+  },
 };
 
-export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
-  return <html lang="pt-BR"><body>{children}</body></html>;
+export default function RootLayout({
+  children,
+}: Readonly<{ children: React.ReactNode }>) {
+  return (
+    <html lang="pt-BR">
+      <body>{children}</body>
+    </html>
+  );
 }
